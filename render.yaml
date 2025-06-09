@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: claude-template-frontend
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: VITE_API_URL
+        value: https://claude-template-api.onrender.com
