@@ -77,13 +77,29 @@ A Dockerfile is provided for containerized deployment. The container serves the 
 
 ## Deployment
 
-This template is designed to be deployed on platforms like:
-- Render.com
-- Vercel
-- Netlify
+### Render.com (Recommended)
+
+This template includes a `render.yaml` file for easy deployment to Render:
+
+1. Push your code to GitHub
+2. Connect your GitHub repository to Render
+3. The `render.yaml` will automatically configure the deployment
+4. The app will be built using Docker and served via nginx
+
+The deployment includes:
+- Multi-stage Docker build for optimized production image
+- nginx configuration with SPA routing support
+- Static asset caching and gzip compression
+- Security headers
+
+### Other Platforms
+
+This template can also be deployed to:
+- Vercel (auto-detects Vite projects)
+- Netlify (auto-detects build commands)
 - Any static hosting service
 
-The build output is a static SPA that can be served from any web server.
+For static hosting, run `npm run build` and deploy the `dist/` folder.
 
 ## Future Claude Sessions
 
